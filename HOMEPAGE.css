@@ -1,0 +1,328 @@
+ /*CSS variables for colors and border radius*/
+:root{
+  --red:#c8102e;
+  --deep-red:#9b0a1b;
+  --blue:#0b63d6;
+  --black:#020203;
+  --muted:#bfc7cf;
+  --radius:14px;
+}
+
+/*Universal Selector*/
+* {box-sizing: border-box; 
+   margin: 0; 
+   padding: 0;}
+
+/*no overflow for html and body*/
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+} 
+
+/*body*/
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg,#010102,#090910);
+  color:  #eef4f8;
+  padding-top: 90px;
+  min-height:fit-content;
+}
+
+/*for links*/
+a { text-decoration:none; color:inherit; }
+
+/*header*/
+#mainheader {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 18px;
+background: rgba(0,0,0,0.8);
+border-radius: var(--radius);
+position:fixed;
+top: 10px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 1000;
+width: 95%;
+max-width: 1200px;
+backdrop-filter: blur(6px);
+transition: top 0.3s ease;
+}
+
+
+/*logo*/
+.adzurotclogo {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+/*logopic*/
+.adzurotclogo img{
+width: 60px;
+height: 60px;
+border-radius: 12px;
+object-fit: cover;
+}
+
+/* for heading1 in logo font-size and fotn weight and its color */
+.logo-text h1 {
+font-size: 18px;
+font-weight: 800;
+color: var(--deep-red);
+}
+
+
+/*for paragraph in logo*/
+.logo-text {
+font-size: 12px;
+color: var(--muted);
+line-height: 1.2;
+}
+
+/*burger menu icon*/
+.burger {
+width: 30px;
+height: 22px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+cursor: pointer;
+z-index: 1100;
+}
+
+/*for burger like the 3 lines*/
+.burger div {
+height: 4px;
+background: #fff;
+border-radius: 2px;
+transition: all 0.3s ease;
+}
+
+/*css for burger menu if we click it will show X*/
+.burger.toggle div:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.burger.toggle div:nth-child(2) { opacity: 0; }
+.burger.toggle div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px,-5px);
+}
+
+/* Navigation (Side Menu) */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  background: rgba(2,2,3,0.97);
+  display: flex;
+  flex-direction: column;
+  padding: 100px 15px 50px 15px; 
+  gap: 18px;
+  transition: right 0.4s ease, opacity 0.3s ease;
+  z-index: 1001;
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: auto;
+  border: solid var(--red);
+  border-radius: var(--radius);
+}
+
+/*css for navlinks if we click the burger it wil show the links*/
+.nav-links.open{
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+/*for the links like yung background ng links yung gray*/
+.nav-links a, .dropdown-btn1{
+  color: #fff;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: grey;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+/*hover of the links*/
+.nav-links a:hover, 
+.dropdown-btn1:hover {
+  background: rgba(255,255,255,0.15); 
+}
+
+/*UNIFORM DROPDOWN */
+.unifdropdown {
+ width: 100%;
+ position:relative;
+}
+
+/*for the UNIFORM button*/
+.dropdown-btn1{
+    width: 100%;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+    background: grey;
+    color: #fff;
+    padding: 10px;
+    border-radius: var(--radius);
+    transition: background 0.2s;
+}
+
+/*hOver for UNIFORM button*/
+.dropdown-btn1:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/*css to hide to uniform MENU*/
+.dropdown-uniforms {
+    display: none;
+    flex-direction: column;
+    /*background:rgba(255,255,255,0.15);*/
+    border-radius: var(--radius);
+    margin-top: 8px;
+    padding: 10px 0;
+}
+
+/* Links inside the UNIFORM DROPDOWN*/
+.dropdown-uniforms a {
+  padding: 10px 15px;
+  color: #fff;
+  display:block;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+/*hover for the background of the dropdown links uniform */
+.dropdown-uniforms a:hover {
+  background: rgba(255,255,255,0.15);
+} 
+
+/*to show the menu of the dropdown if we click*/
+.unifdropdown.show .dropdown-uniforms{
+    display: flex;
+}
+
+
+/*GALLERY DROPDOWN*/
+.gallerydropdown {
+    width: 100%;
+    position:relative;
+}
+
+/*for the GALLERY button*/
+.dropdown-btn2{
+    width: 100%;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+    background: grey;
+    color: #fff;
+    padding: 10px;
+    border-radius: var(--radius);
+    transition: background 0.2s;
+}
+
+/*hOver for GALLERY button*/
+.dropdown-btn2:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/*css to hide to gallery MENU*/
+.dropdown-gallery {
+    display: none;
+    flex-direction: column;
+    /*background:rgba(255,255,255,0.15);  */
+    border-radius: var(--radius);
+    margin-top: 8px;
+    padding: 10px 0;
+}
+
+/* Links inside the UNIFORM DROPDOWN*/
+.dropdown-gallery a {
+  padding: 10px 15px;
+  color: #fff;
+  display:block;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+/*hover for the dropdown in gallery*/
+.dropdown-gallery a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/*to show the menu of the dropdown if we click*/
+.gallerydropdown.show .dropdown-gallery{
+    display: flex;
+}
+
+/*hero banner*/
+
+/*position and sizing of the banner*/
+.hero {
+margin-top: 15px;
+max-width: 1200px;
+height: 450px;
+border: solid var(--red);
+overflow: hidden;
+border-radius: var(--radius);
+position:relative;
+align-items: center;
+display: flex;
+justify-content: center;
+background-image: url('adzuforbanner.jpg'); 
+background-size:cover ;
+background-position: center;
+margin-left: auto;
+margin-right: auto; 
+}
+
+/*hover */
+.hero:hover { 
+  box-shadow: 0 10px 30px rgba(255, 59, 59, 0.6);
+  animation: pulse 1s infinite; 
+}
+
+/*for overlay of the image*/
+.hero::after{
+content:'';
+inset:0px;
+position:absolute;
+background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(8,8,12,0.8));
+}
+
+/*to surface the text*/
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align:center;
+  padding: 20 px;
+}
+
+/*text in the banner for heading 2*/
+.hero-inner h2 {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+/*for font color in heading 2*/
+.hero-inner h2 span { color: var(--red); }
+/*for color in banner paragrahp*/
+.hero-inner p {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+
+
+
+
+
+
+

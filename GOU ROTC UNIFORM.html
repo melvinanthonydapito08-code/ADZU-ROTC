@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOU-UNI</title>
+    <link rel="stylesheet" href="HEADER CSS.css">
+</head>
+<body>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        }
+        body {
+        font-family: 'Arial', sans-serif;
+        background-image: radial-gradient(circle at center, rgb(45, 1, 9), black);
+        color: white;
+        height: 100dvh;
+        height: 100vh;
+        margin-bottom: 30px;
+        min-height: fit-content;
+        }
+        .title {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 50px;
+        animation: fadeIn 1.5s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 45px;
+        padding-top: 90px;
+        text-shadow: 0 0 20px rgba(255, 70, 70, 0.8);
+         color: #ff3b3b;
+        }
+        .opener {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-bottom: 30px;
+        margin-top: 10px;
+        animation: fadeIn 2s ease-in-out;
+        font-weight: bold;
+        text-decoration: underline solid #ff3b3bd4 1.5px;
+        text-underline-offset: 15px;
+        font-size: 25px;
+         color: #ff3b3b;
+        }
+
+/*GOU UNIFORM*/
+        .gou {
+        background-color: #1a1a1a;
+        border: 2px solid #ff3b3b;
+        color: white;
+        display: grid;
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+        padding: min(5em, 2%);
+        border-radius: 20px;
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 1s ease-in;
+        }
+        .gou:hover {
+        box-shadow: 0 10px 30px rgba(255, 59, 59, 0.6);
+        }
+        .guidelines {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        }
+        .guidelines h1 {
+        text-align: center;
+        }
+        .guidelines ul{
+        font-size: 14px;
+        list-style-type: none;
+        }
+        .dos {
+        background-color:rgba(0, 128, 0, 0.155);
+        border: 1px solid green;
+        color: white;
+        padding: 20px;
+        margin-right: 25px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .dos:hover {
+        transform: translateY(-8px) scale(1.02);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 0px 20px green;
+        }
+        .dos h2{
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 45px;
+        }
+        .donts {
+        background-color: rgba(255, 0, 0, 0.155);
+        border: 1px solid red;
+        color: white;
+        padding: 20px;
+        margin-left: 25px;
+        align-items: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .donts:hover {
+        transform: translateY(-8px) scale(1.02);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 0px 20px red;
+        }
+        .donts h3{
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 45px;
+        }
+        .gou-uni {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        .gou-uni img {
+        height: 600px;
+        width: auto;
+        margin-left: 100px;
+        margin-right: 60px;
+        }
+/*FOR MODALS*/
+        .modal {
+        display: none; 
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.75);
+        backdrop-filter: blur(3px);
+        justify-content: center;
+        align-items: center;
+        }
+        .modal-info {
+        background: white;
+        padding: 20px;
+        max-width: 300px;
+        width: 80%;
+        border-radius: 12px;
+        text-align: center;
+        animation: popup 0.25s ease;
+        }
+        .modal p {
+        color: black;
+        font-size: 20px;
+        padding: 15px;
+        font-weight: bold;
+        font-size: larger;
+        }
+        .modal img {
+        height: auto;
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+        border: 2px solid black;
+        }
+
+/*BUTTONS*/
+    .button {
+        position: absolute;
+        width: 2vw;
+        height: 2vw;
+        max-width: 20px;
+        max-height: 20px;
+        min-width: 28px;
+        min-height: 28px;
+        border-radius: 50%;
+        border: 2px solid black;
+        background: rgba(255, 255, 255, 0.717);
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+    }
+    .btn-1 { top: 8%; left: 84%; }
+    .btn-2 { top: 28%; left: 79%; }
+    .btn-3 { top: 32%; left: 80%; }
+    .btn-4 { top: 43%; left: 86%; }
+    .btn-5 { top:43%; left: 82%; }
+    .btn-6 { top:90%; left: 86%; }
+    .btn-7 { top: 23%; left: 86%; }
+    
+    .button:hover {
+        background-color:white;
+        color:black;
+        box-shadow:#0c0f0a3f 2px 2px 2px 2px;
+    }
+    .close-btn:hover {
+        background-color:#ff3b3b;
+        color:white;
+        box-shadow:#0c0f0a3f 2px 2px 2px 2px;
+    }
+    .close-btn {
+        margin-top: 15px;
+        padding: 8px 15px;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+/*KEYFRAMES*/
+    @keyframes popup {
+        from { transform: scale(0.7); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    </style>
+
+     <header id="mainheader">
+      <!--logo and title-->
+    <div class="adzurotclogo">
+        <img src="adzulogo.jpg" alt="ADZU ROTC LOGO">
+        <div class="logo-text">
+          <h1>ADZU ROTC</h1>
+          <p>Ignatian Cadets Corps — Discipline • Leadership • Service</p>
+        </div>  
+    </div>    
+
+      <!--burger menu icon-->
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div> 
+        <div></div>
+      </div>
+
+      <!--nav-links for different sections-->
+      <nav class="nav-links" id="navLinks">
+        <a href="HOMEPAGE.html">Home</a>
+        <a href="ABOUT PAGE.html">About</a>
+        <a href="ANNOUNCEMENT PAGE.html">Announcements</a>
+
+        <!--Uniform Dropdown-->
+        <div class="unifdropdown">
+          <button class="dropdown-btn1">Uniforms ▾</button>
+          <div class="dropdown-uniforms">
+          <a href="TYPE C.html">TYPE C</a>
+          <a href="GOU ROTC UNIFORM.html">GOU</a>
+          <a href="BDU ROTC.html">BDU</a>
+          <a href="GALA UNIFORM.html">GALA</a>
+          </div>
+        </div>
+
+        <!--Gallery Dropdown-->
+        <div class="gallerydropdown">
+          <button class="dropdown-btn2">Gallery ▾</button>
+          <div class="dropdown-gallery">
+            <a href="COLORS - General Assembly.html">General Assembly ROTC Representation</a>
+            <a href="Organization Fair.html">Organization Fair</a>
+            <a href="ROTC Trainings.html">ROTC Trainings</a>
+            <a href="ROTC FIRING .html">ROTC Firing</a>
+            <a href="ROTC Tree Planting.html">ROTC Tree Planting</a>
+          </div>
+        </div>
+          
+        <a href="CONTACT.html">Contact</a>
+
+      </nav>
+    </header>
+
+    <h1 class="title">ROTC Uniform Guidelines</h1>
+        <p class="opener">General Office Uniform (GOU) Guidelines</p>
+    <section class="gou">
+        <div class="guidelines">
+                <div class="dos">
+                    <h2>DOs <span style="background-color: green; color:white; padding: 5px 13px; border-radius: 50%;">&#10004;</span></h2>
+                        <ul>
+                        <li><strong>Maintain Proper Dress and Bearing</strong> - Ensure all placements of Rank, Pins, Nametag, and other accessories are correct and comply with regulations.</li><br><br>
+                        <li><strong>Keep it Impeccably Clean</strong> - The uniform must be clean, pressed, and stain-free. Footwear must be highly polished ("shined").</li><br><br>
+                        <li><strong>Wear for Official Functions Only</strong> - Wear the uniform strictly for official ROTC duties, training, formations, and ceremonies.</li><br><br>
+                        <li><strong>Show Proper Respect</strong> - Render the correct military salute to superior officers.</li><br><br>
+                        <li><strong>Grooming Standards</strong> - Ensure your hair and overall appearance meet the established military grooming standards while in uniform.</li>
+                        </ul>
+                </div>
+
+                <div class="donts">
+                    <h3>DON'Ts <span style="background-color: red; color:white; padding: 5px 13px; border-radius: 50%;">&#10006;</span></h3>
+                       <ul>
+                        <li><strong>Don't Wear for Personal Business</strong> - Do not use the uniform for unauthorized personal errands like shopping, watching movies, or casual public outings.</li><br><br>
+                        <li><strong>Don't Wear Incomplete</strong> - Never wear "half-uniforms" (e.g., uniform trousers with civilian attire). The uniform must be worn as a complete set.</li><br><br>
+                        <li><strong>Don't Put Hands in Pockets</strong> - Keep your hands out of your pockets, as this is considered unprofessional and undisciplined.</li><br><br>
+                        <li><strong>Don't Use Prohibited Items</strong> - Smoking, consuming alcohol, or gambling is prohibited while in uniform, especially in public.</li><br><br>
+                        <li><strong>Don't Carry Bulky Items</strong> - Avoid having noticeable bulk in your pockets (like large cell phones or wallets) that ruins the uniform's smooth appearance.</li><br><br>
+                        <li><strong>Don't Wear Unauthorized Accessories</strong> - Do not wear excessive or flashy jewelry; keep any necessary accessories simple and conservative.</li>
+                        </ul>
+                </div>
+        </div>
+        <div class="gou-uni">
+            <button class="button btn-1" onclick="openModal('modal1')"></button>
+            <button class="button btn-2" onclick="openModal('modal2')"></button>
+            <button class="button btn-3" onclick="openModal('modal3')"></button>
+            <button class="button btn-4" onclick="openModal('modal4')"></button>
+            <button class="button btn-5" onclick="openModal('modal5')"></button>
+            <button class="button btn-6" onclick="openModal('modal6')"></button>
+            <button class="button btn-7" onclick="openModal('modal7')"></button>
+
+            <img src="gou.png">
+        </div>
+
+<div class="modal" id="modal1">
+    <div class="modal-info">
+        <p>AF ROTC Beret</p>
+        <button class="close-btn" onclick="closeModal('modal1')">Close</button>
+    </div>
+</div>
+
+<div class="modal" id="modal2">
+    <div class="modal-info">
+        <img src="nametag.jpg">
+        <p>Nametag</p>
+        <button class="close-btn" onclick="closeModal('modal2')">Close</button>
+    </div>
+</div>
+
+<div class="modal" id="modal3">
+    <div id="modal3" class="modal-info">
+        <img src="classpin.jpg">
+        <p>Class Pin</p>
+        <button class="close-btn" onclick="closeModal('modal3')">Close</button>
+    </div>
+</div>
+
+<div class="modal" id="modal4">
+    <div class="modal-info">
+        <p>Belt</p>
+        <button class="close-btn" onclick="closeModal('modal4')">Close</button>
+    </div>
+</div>
+
+<div class="modal" id="modal5">
+    <div class="modal-info">
+        <img src="buckle.jpg">
+        <p>Buckle</p>
+        <button class="close-btn" onclick="closeModal('modal5')">Close</button>
+    </div>
+</div>   
+
+<div class="modal" id="modal6">
+    <div class="modal-info">
+        <p>Boots (Gibson Tactical)</p>
+        <button class="close-btn" onclick="closeModal('modal6')">Close</button>
+    </div>
+</div> 
+
+<div class="modal" id="modal7">
+    <div class="modal-info">
+        <img src="loop nd rank.jpg">
+        <p>Shoulder Loop <span style="font-weight: normal; font-style: italic;">and</span> Rank</p>
+        <button class="close-btn" onclick="closeModal('modal7')">Close</button>
+    </div>
+</div> 
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+</script>
+<script src="WEBPROG FINAL FINAL TASK.js"></script>
+</body>
+</html>

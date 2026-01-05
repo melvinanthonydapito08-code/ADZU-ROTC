@@ -1,0 +1,118 @@
+{
+	"folders": [
+		{
+			"path": "../HTML1"
+		},
+		{
+			"path": "../for HTML practice"
+		},
+		{
+			"path": "../activity 4 in html"
+		},
+		{
+			"path": "../DARIB_AC04.html"
+		},
+		{
+			"path": "../html music festival"
+		},
+		{
+			"path": "../for practice only in html"
+		},
+		{
+			"path": "../1st hands on webprog"
+		},
+		{
+			"path": "../1st hands on final file"
+		},
+		{
+			"path": "../1st year BSIT Webprog Hands-on"
+		},
+		{
+			"path": "../Scitecs research Website"
+		},
+		{
+			"path": "../C++ 1st file - 1st year bsit"
+		},
+		{
+			"path": "../javascript activity"
+		},
+		{
+			"path": "../javascript file for practice"
+		},
+		{
+			"path": "../1st year bsit - Webprog Finals"
+		},
+		{
+			"path": "../../Downloads/HTML, CSS, JS PRACTICE"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../WEBPROG FINAL HANDSON"
+		},
+		{
+			"path": "../CONTACT"
+		},
+		{
+			"path": "../for header to study"
+		},
+		{
+			"path": "../study for finals midterm c++ 1st BSIT"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "1st year bsit - Webprog Finals",
+		"files.associations": {
+			"array": "cpp",
+			"atomic": "cpp",
+			"bit": "cpp",
+			"cctype": "cpp",
+			"charconv": "cpp",
+			"clocale": "cpp",
+			"cmath": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"cstddef": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"ctime": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"deque": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"vector": "cpp",
+			"exception": "cpp",
+			"algorithm": "cpp",
+			"functional": "cpp",
+			"iterator": "cpp",
+			"memory": "cpp",
+			"memory_resource": "cpp",
+			"numeric": "cpp",
+			"optional": "cpp",
+			"random": "cpp",
+			"string_view": "cpp",
+			"system_error": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp",
+			"format": "cpp",
+			"initializer_list": "cpp",
+			"iosfwd": "cpp",
+			"iostream": "cpp",
+			"istream": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"numbers": "cpp",
+			"ostream": "cpp",
+			"span": "cpp",
+			"stdexcept": "cpp",
+			"streambuf": "cpp",
+			"text_encoding": "cpp",
+			"typeinfo": "cpp",
+			"variant": "cpp"
+		}
+	}
+}

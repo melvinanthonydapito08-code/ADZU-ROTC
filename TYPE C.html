@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYPE-C</title>
+    <link rel="stylesheet" href="HEADER CSS.css">
+</head>
+<body>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        }
+        body {
+        font-family: 'Arial', sans-serif;
+        background-image: radial-gradient(circle at center, rgb(45, 1, 9), black);
+        color: white;
+        height: 100dvh;
+        height: 100vh;
+        margin-bottom: 30px;
+        min-height: fit-content;
+        }
+        .title {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 50px;
+        animation: fadeIn 1.5s ease-in-out;
+        letter-spacing: 4px;
+        padding-top:90px;
+        font-size: 45px;
+        text-shadow: 0 0 20px rgba(255, 70, 70, 0.8);
+        text-transform: uppercase;
+        color: #ff3b3b;
+        }
+        .opener {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-bottom: 30px;
+        margin-top: 10px;
+        animation: fadeIn 2s ease-in-out;
+        font-weight: bold;
+        text-decoration: underline solid #ff3b3bd4 1.5px;
+        text-underline-offset: 15px;
+        font-size: 25px;
+          color: #ff3b3b;
+        }
+
+/*GOU UNIFORM*/
+        .typec {
+        background-color: #1a1a1a;
+        border: 2px solid #ff3b3b;
+        display: grid;
+        display: flex;
+        flex: 1;
+        grid-template-columns: repeat(2, 1fr);
+        padding: min(5em, 2%);
+        border-radius: 20px;
+        position: relative;
+        width: 100%;
+        max-width: 1100px;
+        margin: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 1s ease-in;
+        justify-content: center;
+        align-items: center;
+        }
+        .typec:hover {
+        box-shadow: 0 10px 30px rgba(255, 59, 59, 0.6);
+        }
+        .typec img {
+        margin: 15px;
+        border: 1px solid white;
+        border-radius: 10px;
+        height: 500px;
+        width: auto;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+        }
+        .typec img:hover {
+        transform: translateY(-10px) scale(1.1);
+        transition: transform 1s ease, box-shadow 0.3s ease;
+        box-shadow: 0 0px 20px rgba(255, 255, 255, 0.575);
+        }
+
+/*KEYFRAMES*/
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+/* TABLET SIZE (max-width: 900px) */
+@media (max-width: 500px) {
+  .typec {
+    width: 48%;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 30px;
+    letter-spacing: 3px;
+  }
+}
+
+/* LARGE MOBILE (max-width: 650px) */
+@media (max-width: 650px) {
+  .typec {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .typec img {
+    height: 160px;
+  }
+
+  .opener {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
+
+/* SMALL MOBILE (max-width: 450px) */
+@media (max-width: 450px) {
+
+  .title {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .opener {
+    font-size: 18px;
+  }
+
+  .typec img {
+    height: 140px;
+  }
+}
+    </style>
+
+     <header id="mainheader">
+      <!--logo and title-->
+    <div class="adzurotclogo">
+        <img src="adzulogo.jpg" alt="ADZU ROTC LOGO">
+        <div class="logo-text">
+          <h1>ADZU ROTC</h1>
+          <p>Ignatian Cadets Corps — Discipline • Leadership • Service</p>
+        </div>  
+    </div>    
+
+      <!--burger menu icon-->
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div> 
+        <div></div>
+      </div>
+
+      <!--nav-links for different sections-->
+      <nav class="nav-links" id="navLinks">
+        <a href="HOMEPAGE.html">Home</a>
+        <a href="ABOUT PAGE.html">About</a>
+        <a href="ANNOUNCEMENT PAGE.html">Announcements</a>
+
+        <!--Uniform Dropdown-->
+        <div class="unifdropdown">
+          <button class="dropdown-btn1">Uniforms ▾</button>
+          <div class="dropdown-uniforms">
+          <a href="TYPE C.html">TYPE C</a>
+          <a href="GOU ROTC UNIFORM.html">GOU</a>
+          <a href="BDU ROTC.html">BDU</a>
+          <a href="GALA UNIFORM.html">GALA</a>
+          </div>
+        </div>
+
+      <!--Gallery Dropdown-->
+        <div class="gallerydropdown">
+          <button class="dropdown-btn2">Gallery ▾</button>
+          <div class="dropdown-gallery">
+            <a href="COLORS - General Assembly.html">General Assembly ROTC Representation</a>
+            <a href="Organization Fair.html">Organization Fair</a>
+            <a href="ROTC Trainings.html">ROTC Trainings</a>
+            <a href="ROTC FIRING .html">ROTC Firing</a>
+            <a href="ROTC Tree Planting.html">ROTC Tree Planting</a>
+          </div>
+        </div>
+          
+        <a href="CONTACT.html">Contact</a>
+
+      </nav>
+    </header>
+
+    <h1 class="title">ROTC Uniform Guidelines</h1>
+    <p class="opener">TYPE C Uniform</p>
+        <div class="typec">
+                <div class="typec-1">
+                    <img src="typec1.jpg">
+                </div>
+                <div class="typec-2">
+                    <img src="typec2.jpg">
+                </div>
+        </div>
+         <script src="WEBPROG FINAL FINAL TASK.js"></script>
+      </body>
+</html>`

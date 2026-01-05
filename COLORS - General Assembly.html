@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Assembly ROTC Representation</title>
+    <link rel="stylesheet" href="HEADER CSS.css">
+
+    <style> 
+body {
+  margin: 0;
+  padding: 60px 0;
+  background: #0c0c0c;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  transform: scale(0.92);
+  transform-origin: top center;
+  padding-top: 95px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1350px;
+  padding: 0 40px;
+  color: bisque;
+}
+
+.event-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  text-shadow: 0 0 20px rgba(255, 70, 70, 0.8);
+  color: #ff3b3b;
+  padding-top: 10px;
+
+}
+
+.slide {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.item {
+  background: #111;
+  border: 2px solid #ff2e2e;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 20, 20, 0.35);
+}
+
+.box {
+  width: 55px;
+  height: 55px;
+  background: #ff2e2e22;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  box-sizing: unset;
+}
+
+.caption {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 10px 0 15px;
+  color: #ff3b3b;
+
+}
+
+.caption::after {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background: #ff2e2e;
+  display: block;
+  margin: 10px auto 20px;
+}
+
+/* --- CAROUSEL, for the picture to scroll inside the box --- */
+.auto-scroll {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.auto-scroll img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.auto-scroll img:hover {
+  transform: scale(1.05);
+}
+
+/* --- ARROWS, for the images to move for every click by the user, it will move.  --- */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,0,0,0.3);
+  border: 2px solid #ff2e2e;
+  color: white;
+  font-size: 24px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow-left { left: 10px; }
+.arrow-right { right: 10px; }
+
+/* --- LIGHTBOX --- *//*IF THE USER CLICKS ON THE PICTURE, IT WILL POP UP ITS OWN WINDOW*/
+#lightbox {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+#lightbox span {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+    <header id="mainheader">
+      <!--logo and title-->
+    <div class="adzurotclogo">
+        <img src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t39.30808-6/560132389_122260841066020812_5739643604598939670_n.jpg?_nc_cat=105&cb2=99be929b-bd9a46d7&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFXVW9QuzvDoJdmv-UPlac_7gKsX0aKW3LuAqxfRopbcpmzXkyr-TwjjK0xAcTI7sPjgsKAxYbGcsgUizaBh4Ij&_nc_ohc=Snr51C94waYQ7kNvwETiS2O&_nc_oc=Admp6uD7vl_3B4xpShsQl8ygNKyKiAAdMDPaj0HEoUTBtTDbzPhRCduoFoK_B9bmzw4&_nc_zt=23&_nc_ht=scontent.fcgy1-1.fna&_nc_gid=5drhNulCEoeg8vJHVkH4qA&oh=00_Afi2r0lT02v9MrCsId918u11VYfkwMHH-_Wk2grDd6OZAA&oe=692261A5" alt="ADZU ROTC LOGO">
+        <div class="logo-text">
+          <h1>ADZU ROTC</h1>
+          <p>Ignatian Cadets Corps — Discipline • Leadership • Service</p>
+        </div>  
+    </div>    
+
+      <!--burger menu icon-->
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div> 
+        <div></div>
+      </div>
+
+      <!--nav-links for different sections-->
+      <nav class="nav-links" id="navLinks">
+        <a href="HOMEPAGE.html">Home</a>
+        <a href="ABOUT PAGE.html">About</a>
+        <a href="ANNOUNCEMENT PAGE.html">Announcements</a>
+
+        <!--Uniform Dropdown-->
+        <div class="unifdropdown">
+          <button class="dropdown-btn1">Uniforms ▾</button>
+          <div class="dropdown-uniforms">
+          <a href="TYPE C.html">TYPE C</a>
+          <a href="GOU ROTC UNIFORM.html">GOU</a>
+          <a href="BDU ROTC.html">BDU</a>
+          <a href="GALA UNIFORM.html">GALA</a>
+          </div>
+        </div>
+
+        <!--Gallery Dropdown-->
+        <div class="gallerydropdown">
+          <button class="dropdown-btn2">Gallery ▾</button>
+          <div class="dropdown-gallery">
+            <a href="COLORS - General Assembly.html">General Assembly ROTC Representation</a>
+            <a href="Organization Fair.html">Organization Fair</a>
+            <a href="ROTC Trainings.html">ROTC Trainings</a>
+            <a href="ROTC FIRING .html">ROTC Firing</a>
+            <a href="ROTC Tree Planting.html">ROTC Tree Planting</a>
+          </div>
+        </div>
+          
+        <a href="CONTACT.html">Contact</a>
+
+      </nav>
+    </header>
+
+
+    <div class="container">
+  <h1 class="event-title" contenteditable="true">ROTC Event Gallery</h1>
+
+  <!-- COLORS - General Assembly -->
+  <div class="slide1">
+    <div class="item">
+      <div class="box"></div>
+      <p class="caption">General Assembly ROTC Representation</p>
+      <div class="auto-scroll">
+        <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/499069799_122240983946020812_3201252435158368969_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE6MJWccpT1-vKEYanQOzAdD0DP_bSE9i8PQM_9tIT2L2CXaVE7ZpwKUZsF146Rxiqk5JiJYWuqQZuLuz1heZE2&_nc_ohc=sMDw-YFkUf0Q7kNvwEkkrmx&_nc_oc=AdlFYE2iIZV9vRqd-U5HF3bJV5BGHtgomM4p7OQrpn0dCaukVIMqC3Igco0RBHPYMlXASGNhAmxIp4jajg4yBrmD&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=rEOL_xvoIqONsitHFemBVA&oh=00_AfgGoUbWoF6hsC_vwXyt0cd0F_iaXXYARHVFX324RF3SWA&oe=6926F01B" class="gallery-img">
+                <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/499090658_122240984054020812_5694846417580688212_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG-vd6oBOtNxU3-E4kBcMpBG38SKUGN8LkbfxIpQY3wucJ7eDjdjIrF5ir13YwWW44WxCRKnv3MiOxErjxwTce8&_nc_ohc=o4EWlvTGHrEQ7kNvwHwx9tl&_nc_oc=AdnKNPkO7YSZOe7cpUJa5XYj_jNO1Duo-9ylFoCDXJbWu9gVSnH9mZ6v86HtgzWpk-oiJbMaDf9GAcBJkqqF7ZBK&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=Zn8an4beNmG7ob4vsz1wow&oh=00_Afj4Z0PkYbf1v9EEuNVgpoL0U0fvg7m6XECSKE1vL-mloQ&oe=6926BD36" class="gallery-img">
+                <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/499069797_122240983856020812_5152812977501108221_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG8EAGd_0nWguPracpjC3RE1SVhsRM_vW3VJWGxEz-9bVNGVHcoF4F8Vr1zVpTPrmKkbxU__oCKG3tbfV1PFep6&_nc_ohc=P63zB4I40gYQ7kNvwGSPGUi&_nc_oc=Adm_rQL8FvpDgwS8KiEi2y6LR2fN9tHOYxnZkk9lJCAj_YfsyyBytlGQGIMuJjubh4_yWkzdSLZNGnfnWr5E5fcy&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=Pvmd2pPAb1TQ-lcaIL5yNg&oh=00_AfjzmURxa-_cqZJOsD36qCEM6fd-l1Weg-amRNRye82RYw&oe=6926C6B4" class="gallery-img">
+                <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/499046460_122240984072020812_3979347582620939917_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFB5ULVvEyL0aaqFbqol8sxuyMPMi4VvmW7Iw8yLhW-ZenrmJld0uiEYl_g-0V1ZURr-YSBP3PV56sOk29_AVo3&_nc_ohc=Bb67k6u2yOEQ7kNvwEjM8wv&_nc_oc=Adm261S6jklAqIoHu_cNmRt4zTTnfs3qADqdOXzL4pHszb7wlgCVmOqTc1bILky8Vg55m4MBegsKUaogCJy-MYHI&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=VTzMaMTrU2LGQ0J5fvYpEA&oh=00_AfgrbvM9ZLiR63i54vOEWUGOb9NOVZvuuWtzEUKUZcL_zw&oe=6926E7AA" class="gallery-img">
+                <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/500230623_122240982146020812_1720526421811955422_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGN5BSgORwbLLNNmfaFR1NUlh2IL86W7MuWHYgvzpbsy_BVYFm0JOcfm22tQMt_zXm23-mR3FpQcxOObzOE48fD&_nc_ohc=i6mkqX1BnMUQ7kNvwGgaEuv&_nc_oc=AdmRGUVjuaIV5OslY_uo2RbI2tSrAsikHjUXssA4lgP7XiyEN3VABVH833vyDBu1CpiBA_fA10IILoLtNkvUOWEX&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=tVC5glR9kt8IQytfHuejfg&oh=00_AfiQ34jDWC-kNGlFdgFUGAbFJEKGnrFQ4mnt-19weg4fdA&oe=6926DCD4" class="gallery-img">
+                <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/500254965_122241888110020812_2182967119127681252_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGsGiBQm99Ok65QpzFlkjWJhJjH1bpHegKEmMfVukd6AhAtuF0zyZVhZn9yiptvZUpyS5Mb1ZK7ddHMh5P81BXZ&_nc_ohc=HmBb9GEbzGwQ7kNvwF8F_B_&_nc_oc=AdnYbcJViXWe8CFWekMkkKTfS8dNp0W2ztF-wmkRHIIHv4SN1ffucY3MUtuSha1ItS3ckKXVvq1X-sz0RWhikL6m&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=_vHvS2mqwbuhUDuMH8qB7g&oh=00_AfglD0t9LI-NBuShbK4wsuCtqKLd9LvnANN9Muar_A-lDw&oe=6926CB24" class="gallery-img">
+                <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/490406869_122234240942020812_7337914541636020087_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEf0jdx_y-m5jR6SRosCtR_5bBdx9Fj6JvlsF3H0WPom_61V5u-tks77qmqWVD0cvu-7OgxvrGEbb1z0wkYir6p&_nc_ohc=QV4xUcEMZZEQ7kNvwHMyZm_&_nc_oc=Adm66BbDUUwIVdC5tuEHdvQ9vimP0FRJCU2EUQVuh1FzgdtDrQSVMxBEAon7c6jXEQAm9F48IHMhapvpfTF2t7vD&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=CvylZ07dfea9HsVzCkkv3Q&oh=00_AfhqOpnI-F-WIWIHM4WsC4up34f60ZvF5HjdmC0kPs-M-Q&oe=6926D9DB" class="gallery-img">
+                <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/499998189_122241890024020812_6887242176126892768_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFF3BtGZa9WP4Zr-4cXiqV-RhILbFEfAvhGEgtsUR8C-J-oXi1-g66c6Td9U4pigp4O9F2TLqSHkmvdh1634W54&_nc_ohc=4wr7bfywDKoQ7kNvwG8Ugk6&_nc_oc=AdlN-zuM09GvJReByHMN5CCJwwcGpQM5ZSGR5XJy-0VGdLxFeNw_WKjpMVG0SZalnX0VnRL43dmlvZmnOk0nbxyB&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=eAll-HH68rJLZagTMqtzZw&oh=00_Afgz2Qrb3_5VNKgUDFdFdfIEMmPU-uZj0NBiuO6JP-gUgg&oe=6926D72E" class="gallery-img">
+                <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/499979616_122241889994020812_9027345727733698002_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeENiGMNzv6hRZGPCIQnwLnusS26ayczXsexLbprJzNex3nGxOAhQvtBI_knh1-8ltjKfJteIchGJ6-HCxlGqOP7&_nc_ohc=eBaYEFqCgxUQ7kNvwGPqTSh&_nc_oc=AdlLrKesCC6_x0TQNH4MQbTfazWcNuwH4H2rRAkpkMoYpxT7rBdB6DS6Af4_RYhty7JJfSAruFYIcatBg8-0MNfj&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=qdWEtAvWckkbXYNgGyDNag&oh=00_Afgal8tt0PfY3_nSwc31k5LXbqz4_ckgltuuo06VpXrn5w&oe=6926CECD" class="gallery-img">
+                <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/500099755_122240983814020812_2329297696369950913_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHe42qMlhVXt0yuMV70kHZGfmbjhaDFUVR-ZuOFoMVRVGXtubpjOq_NLpf3BQznLFiGu9MYiGHo6TXEpnQSIVwM&_nc_ohc=aF9wyMchT8wQ7kNvwEAcym3&_nc_oc=AdmNPyFOQfF7OTf2P-V85WLH3i2PdP1uCIMGsxRQMk81VMxtQHgu2dghwQp5SV4LfQQC6Ufcm9viCIaBnAfX-Nev&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=eEsNqV4BRUpbzgd-cfutzw&oh=00_Afjv4DEv1BQoM3KNO9-_hoHPqQdt7c4ugtrt4niizHioSg&oe=6926EBC7" class="gallery-img">
+
+      </div>
+      <div class="arrow arrow-left">&#10094;</div>
+      <div class="arrow arrow-right">&#10095;</div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+<div id="lightbox">
+  <span onclick="closeLightbox()">✖</span>
+  <img src="">
+</div>
+
+<script>
+
+document.querySelectorAll(".event-title").forEach((title, index) => {
+  const key = "eventTitle" + index;
+  if (localStorage.getItem(key)) title.textContent = localStorage.getItem(key);
+  title.addEventListener("input", () => localStorage.setItem(key, title.textContent));
+});
+
+/*Fuctions for the Lightbox features*/
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+document.querySelectorAll('.auto-scroll img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+
+/* Function for the left and right arrows to keep on looping, for the images to continue to show up in each click  */
+document.querySelectorAll('.item').forEach(item => {
+  const track = item.querySelector('.auto-scroll');
+  const prevArrow = item.querySelector('.arrow-left');
+  const nextArrow = item.querySelector('.arrow-right');
+
+  prevArrow.addEventListener('click', e => {
+    e.preventDefault();
+    // Moves last image to the front
+    track.insertBefore(track.lastElementChild, track.firstElementChild);
+  });
+
+  nextArrow.addEventListener('click', e => {
+    e.preventDefault();
+    // Moves first image to the end
+    track.appendChild(track.firstElementChild);
+  });
+});
+</script>
+
+<script src="WEBPROG FINAL FINAL TASK.js"></script>
+
+    
+</body>
+</html>
